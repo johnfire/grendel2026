@@ -1,0 +1,33 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Temp
+tmp/
+.DS_Store
+
+# Personal reference docs (not project files)
+car-standard-project-structure.md
+coding-standards.md
+home-computer-set-up.md
+intent-values-christopher.md
+personal-context.md
+programming-context.md
+
+# Models / large files
+*.bin
+*.pt
+*.onnx

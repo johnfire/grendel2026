@@ -1,0 +1,4 @@
+paho-mqtt==2.1.0
+picamera2
+python-dotenv==1.0.1
+# Phase 2 — additional vision packages added here

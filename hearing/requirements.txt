@@ -1,0 +1,7 @@
+paho-mqtt==2.1.0
+openai-whisper
+pyaudio
+webrtcvad
+openwakeword
+python-dotenv==1.0.1
+numpy
