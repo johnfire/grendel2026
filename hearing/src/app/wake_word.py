@@ -18,3 +18,6 @@ class WakeWordDetector:
         prediction = self._model.predict(audio)
         score = prediction.get(self._model_name, 0.0)
         return score > DETECTION_THRESHOLD
+
+    def reset(self) -> None:
+        self._model.reset()

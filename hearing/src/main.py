@@ -86,6 +86,7 @@ def run_pipeline(
             if text:
                 mqtt.publish(TOPIC_TEXT, text)
 
+            wake_word.reset()
             mqtt.publish(TOPIC_STATUS, "idle")
             log.info("Returning to wake word detection")
 
