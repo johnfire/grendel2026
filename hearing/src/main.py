@@ -87,9 +87,10 @@ def run_pipeline(
                 mqtt.publish(TOPIC_TEXT, text)
 
             wake_word.reset()
-            # Feed 2s of audio through OWW to flush its mel feature buffer
-            for _ in range(67):
-                wake_word.process(stream.read_chunk())
+            # Cooldown: read and discard 4s so OWW buffer fully settles
+            cooldown_end = time.monotonic() + 4.0
+            while time.monotonic() < cooldown_end:
+                stream.read_chunk()
             mqtt.publish(TOPIC_STATUS, "idle")
             log.info("Returning to wake word detection")
 
