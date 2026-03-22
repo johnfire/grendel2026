@@ -4,4 +4,5 @@ pyaudio
 webrtcvad
 openwakeword
 python-dotenv==1.0.1
-numpy
+numpy<2
+setuptools<72
