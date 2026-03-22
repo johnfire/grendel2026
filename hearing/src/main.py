@@ -87,6 +87,9 @@ def run_pipeline(
                 mqtt.publish(TOPIC_TEXT, text)
 
             wake_word.reset()
+            # Drain ~1s of stale audio so OWW doesn't immediately re-trigger
+            for _ in range(33):
+                stream.read_chunk()
             mqtt.publish(TOPIC_STATUS, "idle")
             log.info("Returning to wake word detection")
 
