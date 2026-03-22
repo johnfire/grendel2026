@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 from openwakeword.model import Model
+from openwakeword.utils import download_models
 
 DETECTION_THRESHOLD = 0.5
 
@@ -9,6 +10,7 @@ DETECTION_THRESHOLD = 0.5
 class WakeWordDetector:
     def __init__(self, model_name: str) -> None:
         self._model_name = model_name
+        download_models()
         self._model = Model(wakeword_models=[model_name])
 
     def process(self, frame_bytes: bytes) -> bool:

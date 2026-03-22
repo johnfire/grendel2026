@@ -1,7 +1,9 @@
 brain:    192.168.0.106
-hearing:  192.168.0.105
+hearing:  192.168.0.106  # co-located with brain on RPi 4B (Cortex-A72 required for torch)
 speaking: 192.168.0.101
 eye:
   - 192.168.0.102
   - 192.168.0.103
-spare:    192.168.0.104
+spare:
+  - 192.168.0.104
+  - 192.168.0.105  # RPi 3B+, demoted — Cortex-A53 can't run torch 2.x
